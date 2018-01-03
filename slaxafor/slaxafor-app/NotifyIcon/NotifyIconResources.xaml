@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:slaxafor_app.NotifyIcon"
+                    xmlns:tb="http://www.hardcodet.net/taskbar"
+>
+    <ContextMenu x:Shared="false" x:Key="SysTrayMenu">
+        <MenuItem Header="Blink" Command="{Binding BlinkCommand}" />
+        <Separator />
+        <MenuItem Header="Show Window" Command="{Binding ShowWindowCommand}" />
+        <Separator />
+        <MenuItem Header="Exit" Command="{Binding ExitApplicationCommand}" />
+    </ContextMenu>
+
+    <tb:TaskbarIcon x:Key="NotifyIcon"
+                    IconSource="/NotifyIcon/images/lightbulb-on.ico"
+                    ToolTipText="Double-click for window, right-click for menu"
+                    DoubleClickCommand="{Binding ShowWindowCommand}"
+                    ContextMenu="{StaticResource SysTrayMenu}"
+    >
+    </tb:TaskbarIcon>
+
+</ResourceDictionary>
