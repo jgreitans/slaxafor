@@ -3,6 +3,8 @@ using LuxaforSharp;
 using slaxafor_app.NotifyIcon;
 using System.Linq;
 using System.Windows;
+using slaxafor;
+using slaxafor_app.Notifier;
 
 namespace slaxafor_app
 {
@@ -11,25 +13,25 @@ namespace slaxafor_app
     /// </summary>
     public partial class App : Application
     {
-        private IDevice _luxafor;
         private TaskbarIcon _taskbarIcon;
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            IDeviceList list = new DeviceList();
-            list.Scan();
-            _luxafor = list.First();
+
+            var model = new NotifyIconViewModel();
+            
             _taskbarIcon = (TaskbarIcon)FindResource("NotifyIcon");
-            _taskbarIcon.DataContext = new NotifyIconViewModel(_luxafor);
+            _taskbarIcon.DataContext = model;
+
+            model.Start();
         }
 
         protected override void OnExit(ExitEventArgs e)
         {
             _taskbarIcon.Dispose();
-            _luxafor.Blink(LedTarget.All, new Color(0, 0, 0), 1);
-            _luxafor.Dispose();
             base.OnExit(e);
         }
     }
+
 }

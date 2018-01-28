@@ -1,16 +1,17 @@
-﻿using LuxaforSharp;
+﻿using System.Linq;
+using LuxaforSharp;
 using System.Windows;
+using slaxafor;
+using slaxafor.Credentials;
+using slaxafor_app.Notifier;
 
 namespace slaxafor_app.NotifyIcon
 {
     public class NotifyIconViewModel
     {
         private IDevice _luxafor;
+        private ISlackNotifier _notifier;
 
-        public NotifyIconViewModel(IDevice luxafor)
-        {
-            _luxafor = luxafor;
-        }
 
         public System.Windows.Input.ICommand ShowWindowCommand
         {
@@ -42,10 +43,21 @@ namespace slaxafor_app.NotifyIcon
             {
                 return new DelegateCommand
                 {
-                    CommandAction = () => Blink(),
+                    CommandAction = Blink,
                     CanExecuteFunc = () => true
                 };
             }
+        }
+
+        public void Start()
+        {
+            IDeviceList list = new DeviceList();
+            list.Scan();
+            _luxafor = list.First();
+
+            var appCredentials = AppCredentialModel.Load(".app-secret.json");
+
+            _notifier = new SlackNotifier(_luxafor, Slaxafor.GetSlackListener("dev-sandbox-jg", appCredentials));
         }
 
         private void Blink()

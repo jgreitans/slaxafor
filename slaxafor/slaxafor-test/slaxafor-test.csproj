@@ -5,15 +5,23 @@
     <RootNamespace>slaxafor_test</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
     <PackageReference Include="Moq" Version="4.8.1" />
-    <PackageReference Include="xunit" Version="2.2.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\slaxafor\slaxafor.csproj">
       <Project>{A6CC6D73-21DF-47A3-B9B8-C964AF9832A0}</Project>
       <Name>slaxafor</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Client" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SlackAPI, Version=1.0.5.93, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\SlackAPI.1.0.5.93\lib\net45\SlackAPI.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

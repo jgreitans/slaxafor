@@ -4,13 +4,13 @@ using slaxafor.Subscriber;
 
 namespace slaxafor.Listener
 {
-    public class SlackListener
+    public class SlackListener: ISlackListener
     {
         private ISlackMessageReceiveSubscriber _subscriber;
 
         public SlackListener(ISlackClient slackClient)
         {
-            
+            slackClient.OnMessageReceived = NotifySubscribers;
         }
 
         public void AddSubscriber(ISlackMessageReceiveSubscriber subscriber)
@@ -18,8 +18,7 @@ namespace slaxafor.Listener
             _subscriber = subscriber;
         }
 
-
-        public void OnMessageReceived(SlackMessage message)
+        private void NotifySubscribers(SlackMessage message)
         {
             _subscriber.OnMessageReceived(message);
         }
