@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "slaxafor-app", "slaxafor-app\slaxafor-app.csproj", "{18B2A81A-8DDC-4DE6-9DB0-DEC14E824BA4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "slaxafor-test", "slaxafor-test\slaxafor-test.csproj", "{4EF5EDE5-AC8A-4A58-9187-84D3D1DFA46A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "slaxafor", "slaxafor\slaxafor.csproj", "{A6CC6D73-21DF-47A3-B9B8-C964AF9832A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{18B2A81A-8DDC-4DE6-9DB0-DEC14E824BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18B2A81A-8DDC-4DE6-9DB0-DEC14E824BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18B2A81A-8DDC-4DE6-9DB0-DEC14E824BA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EF5EDE5-AC8A-4A58-9187-84D3D1DFA46A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EF5EDE5-AC8A-4A58-9187-84D3D1DFA46A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EF5EDE5-AC8A-4A58-9187-84D3D1DFA46A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EF5EDE5-AC8A-4A58-9187-84D3D1DFA46A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6CC6D73-21DF-47A3-B9B8-C964AF9832A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6CC6D73-21DF-47A3-B9B8-C964AF9832A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6CC6D73-21DF-47A3-B9B8-C964AF9832A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6CC6D73-21DF-47A3-B9B8-C964AF9832A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,7 +13,7 @@
 
     <tb:TaskbarIcon x:Key="NotifyIcon"
                     IconSource="/NotifyIcon/images/lightbulb-on.ico"
-                    ToolTipText="Double-click for window, right-click for menu"
+                    ToolTipText="Slaxafor"
                     DoubleClickCommand="{Binding ShowWindowCommand}"
                     ContextMenu="{StaticResource SysTrayMenu}"
     >
